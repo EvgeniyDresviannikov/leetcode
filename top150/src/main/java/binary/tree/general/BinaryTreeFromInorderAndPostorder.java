@@ -22,19 +22,33 @@ public class BinaryTreeFromInorderAndPostorder {
             postorderQueue.add(postorder[i]);
         }
 
-        return backtrack(0, inorder.length-1, postorderQueue, map);
+        return backtrack(inorder, postorderQueue, map);
     }
 
-    private TreeNode backtrack(int left, int right, Queue<Integer> postorder, Map<Integer, Integer> map) {
-        if (left > right) return null;
+    private TreeNode backtrack(int[] inorder, Queue<Integer> postorder, Map<Integer, Integer> map) {
+        if (inorder.length == 0) return null;
 
         int rootValue = postorder.poll();
         TreeNode root = new TreeNode(rootValue);
 
-        int idx = map.get(rootValue);
+        int idx = 0;
 
-        root.right = backtrack(idx+1, right, postorder, map);
-        root.left = backtrack(left, idx-1, postorder, map);
+        for (int i = 0; i < inorder.length; i++) {
+            if (inorder[i] == rootValue) {
+                idx = i;
+                break;
+            }
+        }
+
+
+        if (idx+1 < inorder.length) {
+            root.right = backtrack(Arrays.copyOfRange(inorder, idx+1, inorder.length),  postorder, map);
+        }
+
+        if (idx > 0) {
+            root.left = backtrack(Arrays.copyOfRange(inorder, 0, idx), postorder, map);
+        }
+
 
         return root;
     }
