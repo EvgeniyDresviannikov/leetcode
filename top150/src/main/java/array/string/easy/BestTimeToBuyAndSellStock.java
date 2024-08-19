@@ -7,21 +7,21 @@ public class BestTimeToBuyAndSellStock {
     }
 
     public int maxProfit(int[] prices) {
-        int accumulator = 0;
+        int left = 0;
+        int right = 1;
         int maxDiff = 0;
 
-        for (int i = 1; i < prices.length; i++) {
-            int diff = prices[i] - prices[i-1];
-            accumulator = accumulator + diff;
+        while (right < prices.length) {
+            int profit = prices[right] - prices[left];
 
-            if (accumulator < 0) {
-                accumulator = 0;
+            if (profit > 0) {
+                maxDiff = Math.max(maxDiff, profit);
+            } else {
+                left = right;
             }
-
-            if (accumulator > maxDiff) {
-                    maxDiff = accumulator;
-            }
+            right++;
         }
+
 
         return maxDiff;
     }

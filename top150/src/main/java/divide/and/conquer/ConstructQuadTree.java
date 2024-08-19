@@ -1,7 +1,5 @@
 package divide.and.conquer;
 
-import java.util.Arrays;
-
 public class ConstructQuadTree {
 
     public static void main(String[] args) {
