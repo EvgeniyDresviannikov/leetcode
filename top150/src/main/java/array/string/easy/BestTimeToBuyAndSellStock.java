@@ -1,5 +1,7 @@
 package array.string.easy;
 
+import java.util.Collections;
+
 public class BestTimeToBuyAndSellStock {
 
     public static void main(String[] args) {
@@ -7,6 +9,7 @@ public class BestTimeToBuyAndSellStock {
     }
 
     public int maxProfit(int[] prices) {
+
         int left = 0;
         int right = 1;
         int maxDiff = 0;
