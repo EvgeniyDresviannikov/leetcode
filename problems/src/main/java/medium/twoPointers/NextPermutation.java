@@ -1,4 +1,4 @@
-package medium.TwoPointers;
+package medium.twoPointers;
 
 import java.util.Arrays;
 

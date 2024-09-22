@@ -1,6 +1,5 @@
 package medium.priorityqueue;
 
-import oop.A;
 
 import java.util.ArrayList;
 import java.util.List;

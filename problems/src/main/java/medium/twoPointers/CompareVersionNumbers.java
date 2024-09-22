@@ -1,4 +1,4 @@
-package medium.TwoPointers;
+package medium.twoPointers;
 
 public class CompareVersionNumbers {
 
