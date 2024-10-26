@@ -1,7 +1,5 @@
 package easy.binarysearch;
 
-import java.util.PriorityQueue;
-
 public class MissingNumber {
     public static void main(String[] args) {
         MissingNumber missingNumber = new MissingNumber();
